@@ -1,0 +1,14 @@
+1. Why is MVVM important? Which files represent Model, which files represent View, and which files represent ViewModel?
+MVVM penting karena memisahkan antara tampilan (UI), logika aplikasi, dan pengelolaan data sehingga kode menjadi lebih terstruktur, mudah dikembangkan, serta mudah diuji. Dengan arsitektur ini, perubahan pada tampilan tidak akan memengaruhi logika bisnis maupun data. Pada proyek ini, Model direpresentasikan oleh file Movie.kt, MovieDao.kt, dan MovieDatabase.kt. View direpresentasikan oleh MainActivity.kt dan activity_main.xml. ViewModel direpresentasikan oleh MovieViewModel.kt.
+
+2. In Part 1, you implemented Data Binding, why is this more efficient than using the normal method?
+Data Binding lebih efisien karena memungkinkan tampilan UI memperbarui dirinya secara otomatis ketika data berubah tanpa perlu melakukan pembaruan secara manual di Activity. Penggunaan Data Binding juga mengurangi kebutuhan findViewById, membuat kode lebih ringkas, dan meningkatkan keterbacaan serta pemeliharaan kode.
+
+3. In Part 2, you implemented the Singleton Pattern, why is this important?
+Singleton Pattern penting karena memastikan hanya ada satu instance database yang digunakan di seluruh aplikasi. Hal ini mencegah pemborosan resource, menjaga konsistensi data, dan menghindari race condition ketika database diakses oleh banyak thread secara bersamaan.
+
+4. In Part 2 & 3, you implemented the Repository Pattern, why is this important?
+Repository Pattern penting karena berfungsi sebagai penghubung antara sumber data dari jaringan (API) dan database lokal. Pola ini membuat pengelolaan data menjadi terpusat, kode lebih terstruktur, serta memungkinkan aplikasi tetap berjalan meskipun tanpa koneksi internet melalui penggunaan data cache.
+
+5. In part 3, you implemented the Worker Manager, is there another way to refresh your database with the latest data other than using Worker?
+Selain menggunakan WorkManager, pembaruan database dapat dilakukan dengan mengambil data dari API setiap kali aplikasi dibuka atau melalui aksi manual dari pengguna seperti fitur refresh. Namun, WorkManager lebih direkomendasikan karena mampu menjalankan proses pembaruan secara terjadwal dan berjalan di latar belakang dengan lebih andal.
